@@ -1,13 +1,9 @@
-import Link from "next/link";
 
-function Navigator() {
+
+function Footer() {
   return (
-    <header>
-      <nav className="w-full flex flex-row justify-center my-12">
+    <footer className="flex flex-col justify-center items-center">
         <ul className="w-96 flex flex-row justify-between">
-          <li>
-            <Link href={"/"}>Home</Link>
-          </li>
           <li>
             <a href={"https://github.com/Fr33yr"} target="_blank">
               Github
@@ -27,9 +23,11 @@ function Navigator() {
             </a>
           </li>
         </ul>
-      </nav>
-    </header>
-  );
+        <div className="my-8">
+            <h3>Builded with Next 13</h3>
+        </div>
+    </footer>
+  )
 }
 
-export default Navigator;
+export default Footer
