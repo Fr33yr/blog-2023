@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="dark">
         <Navigator />
-        <main className="min-h-screen p-24 flex flex-col items-center bg-slate-200 dark:bg-slate-600">
+        <main className="min-h-screen p-24 flex flex-col items-center text-black bg-slate-200 dark:bg-slate-600 dark:text-white">
           {children}
         </main>
         <Footer/>
