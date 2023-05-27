@@ -1,8 +1,9 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { Message, Post, PostType } from "../models";
+import { Message as IMessage, PostType } from "../models";
 import { markdownToHtml } from "./posts.services";
+import {Post, Message} from '../../utils/index'
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -48,7 +49,7 @@ export function getAllPosts(fields: string[] = []) {
   return posts;
 }
 
-export const getPost = async (id: string): Promise<PostType | Message> => {
+export const getPost = async (id: string): Promise<PostType | IMessage> => {
   const post = getPostBySlug(id, [
     "title",
     "date",
@@ -59,14 +60,20 @@ export const getPost = async (id: string): Promise<PostType | Message> => {
     "coverImage",
   ]);
   const content = await markdownToHtml(post.content || "");
-  return {
-    slug: post.slug,
-    title: post.title,
-    date: post.date,
-    coverImage: post.coverImage,
-    author: post.author,
-    excerpt: post.excerpt,
-    ogImageUrl: post.ogImageUrl,
-    content: content,
-  };
+  if (post.title && post.date && post.slug && post.author && post.coverImage && content) {
+    // Create a Post instance
+    return new Post({
+      slug: post.slug,
+      title: post.title,
+      date: post.date,
+      coverImage: post.coverImage,
+      author: post.author,
+      excerpt: post.excerpt || '', // You can provide a default value for the excerpt if necessary
+      ogImageUrl: post.ogImageUrl || '', // You can provide a default value for the ogImageUrl if necessary
+      content: content,
+    });
+  } else {
+    // Create a Message instance
+    return new Message('Invalid post data');
+  }
 };
