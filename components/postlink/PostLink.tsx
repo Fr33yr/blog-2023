@@ -13,7 +13,7 @@ function PostLink(props: Props) {
 
   return (
     <div className="w-96 flex p-4 rounded-sm hover:shadow-2xl ">
-      <Link href={"#"}>
+      <Link href={url}>
         <h3>Post title</h3>
         <div className="">{date}</div>
         <p>
