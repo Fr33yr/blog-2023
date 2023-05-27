@@ -1,9 +1,8 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
 import { Message, Post, PostType } from "../models";
+import { markdownToHtml } from "./posts.services";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -47,11 +46,6 @@ export function getAllPosts(fields: string[] = []) {
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
-}
-
-export default async function markdownToHtml(markdown: string) {
-  const result = await remark().use(html).process(markdown);
-  return result.toString();
 }
 
 export const getPost = async (id: string): Promise<PostType | Message> => {

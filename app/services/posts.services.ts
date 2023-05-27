@@ -1,8 +1,7 @@
-import { Post, Message } from "../models/index";
+import { remark } from "remark";
+import html from 'remark-html'
 
-export const getPosts = (): Promise<Post[] | Message> => {
-  return fetch("")
-    .then((res) => res.json())
-    .then((res) => res.data)
-    .catch((err:Message) => err);
-};
+export async function markdownToHtml(markdown: string){
+  const result = await remark().use(html).process(markdown)
+  return result.toString()
+}
