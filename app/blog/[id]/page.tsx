@@ -22,13 +22,19 @@ async function Blog({ params }: Params) {
         ></div>
       </div>
     );
-  } 
-  // message error
+  }
+  // message errors
   else if (response instanceof Message) {
     const { message } = response;
     return (
       <div>
         <h2>{message}</h2>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <h2>Unkown Error</h2>
       </div>
     );
   }
