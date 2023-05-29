@@ -14,13 +14,9 @@ function PostLink(props: Props) {
   return (
     <div className="w-96 flex p-4 rounded-sm hover:shadow-2xl ">
       <Link href={url}>
-        <h3>Post title</h3>
+        <h3>{title}</h3>
         <div className="">{date}</div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum eveniet
-          dignissimos aliquid alias, neque cupiditate ut quidem, quod vitae
-          fugiat beatae ipsa.
-        </p>
+        <p>{description}</p>
       </Link>
     </div>
   );
