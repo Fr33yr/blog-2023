@@ -17,5 +17,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## About this project
 
 This is a blog builded using vercel's blog template i just take its funcionality
-to parse the md in to html and adapted all to work with next 13.
+to parse markdown files to html and adapted it to work with next 13.
 - [Template link](https://vercel.com/templates/next.js/blog-starter-kit ).
