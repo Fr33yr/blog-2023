@@ -16,10 +16,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## About this project
 
-This is a blog builded in Next 13
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
+This is a blog builded using vercel's blog template i just take its funcionality
+to parse the md in to html and adapted all to work with next 13.
+- [Template link](https://vercel.com/templates/next.js/blog-starter-kit ).
