@@ -60,6 +60,7 @@ export const getPost = async (id: string): Promise<PostType | IMessage> => {
     "coverImage",
   ]);
   const content = await markdownToHtml(post.content || "");
+
   if (post.title && post.date && post.slug && post.author && post.coverImage && content) {
     // Create a Post instance
     return new Post({

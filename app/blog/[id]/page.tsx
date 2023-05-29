@@ -11,7 +11,7 @@ async function Blog({ params }: Params) {
 
   // post render
   if (response instanceof Post) {
-    const { content } = response;
+    const { content } = response.post;
 
     return (
       <div>
