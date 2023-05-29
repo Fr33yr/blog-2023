@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { Message as IMessage, PostType } from "../models";
+import { Message as IMessage, PostType} from "../models";
 import { markdownToHtml } from "./posts.services";
 import {Post, Message} from '../../utils/index'
 
@@ -46,7 +46,7 @@ export function getAllPosts(fields: string[] = []) {
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+  return posts as unknown as PostType[];
 }
 
 export const getPost = async (id: string): Promise<PostType | IMessage> => {
@@ -67,11 +67,11 @@ export const getPost = async (id: string): Promise<PostType | IMessage> => {
       title: post.title,
       date: post.date,
       coverImage: post.coverImage,
-      author: post.author,
-      excerpt: post.excerpt || '', // You can provide a default value for the excerpt if necessary
-      ogImageUrl: post.ogImageUrl || '', // You can provide a default value for the ogImageUrl if necessary
+      author: { name: 'post.author', picture: "" },
+      excerpt: post.excerpt || '',
+      ogImage: { url: "" },
       content: content,
-    });
+    }) as unknown as PostType;
   } else {
     // Create a Message instance
     return new Message('Invalid post data');
