@@ -13,13 +13,11 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+If you wish to create a post, use the "helloworld.md" file in the "_posts" folder as a template. Notice that at the top of the file, you have some fields like title, excerpt, author, etc. You need to fill those fields for the post object to be created.
+
 
 ## About this project
 
-This is a blog builded in Next 13
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
+This is a blog builded using vercel's blog template i just take its funcionality
+to parse markdown files to html and adapted it to work with next 13.
+- [Template link](https://vercel.com/templates/next.js/blog-starter-kit ).
