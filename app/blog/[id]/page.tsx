@@ -15,7 +15,7 @@ async function Blog({ params }: Params) {
 
     return (
       <div>
-        <h2>Blog {params.id}</h2>
+        <h1 className="text-3xl text-center mb-16">{params.id}</h1>
         <div
           className={styles["markdown"]}
           dangerouslySetInnerHTML={{ __html: content }}

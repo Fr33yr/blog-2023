@@ -1,15 +1,25 @@
 "use client";
 import { useColorMode } from "../../../hooks/index";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import sun from '../../../assets/icons/sun-svgrepo-com.svg'
+import Image from "next/image";
 
 function ToggleButton() {
   const [colorMode, setColorMode] = useColorMode();
 
   return (
     <button
-      className="bg-slate-900 dark:bg-slate-100 text-cyan-50 dark:text-black"
+      className="ml-12 text-cyan-50 dark:text-black"
       onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")}
     >
-      Toggle theme
+      {colorMode === "light" ? (
+          <FontAwesomeIcon icon={faMoon} className="text-white"/>
+      ) : (
+        <span className="rounded-full">
+          <Image src={sun} width={25} height={25} alt="sun-icon"/>
+        </span>
+      )}
     </button>
   );
 }
