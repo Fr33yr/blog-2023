@@ -13,6 +13,8 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+If you wish to create a post, use the "helloworld.md" file in the "_posts" folder as a template. Notice that at the top of the file, you have some fields like title, excerpt, author, etc. You need to fill those fields for the post object to be created.
+
 
 ## About this project
 
